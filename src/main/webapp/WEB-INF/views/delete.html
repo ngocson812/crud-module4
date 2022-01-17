@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${deletemovie}" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Time</td>
+            <td><input th:field="*{time}"></td>
+        </tr>
+
+        <tr>
+            <td>Descreption</td>
+            <td><input th:field="*{descrep}"></td>
+        </tr>
+
+        <tr>
+            <td> Video</td>
+            <td><input th:field="*{vid}"></td>
+        </tr>
+
+        <td>
+            <select name="idCate">
+                <option th:each="c: ${list}" th:text="${c.namecate}" th:value="${c.idcate}"></option>
+            </select>
+        </td>
+
+        <tr>
+            <button type="submit"> Delete</button>
+        </tr>
+
+        <tr>
+            <td> Img</td>
+            <td><img th:src="*{img}"></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
